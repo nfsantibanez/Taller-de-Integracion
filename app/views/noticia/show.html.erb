@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Detalle Noticia:</h1>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @noticium.titulo %>
+</p>
+
+<p>
+  <strong>Bajada:</strong>
+  <%= @noticium.bajada %>
+</p>
+
+<p>
+  <strong>Cuerpo:</strong>
+  <%= @noticium.cuerpo %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @noticium.fecha %>
+</p>
+
+<h2>Comentarios:</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>Autor</th>
+    <th>Contenido</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <% @noticium.comentarios.all.each do |comentario| %>
+        <tr>
+          <td><%= comentario.nombre %></td>
+          <td><%= comentario.contenido %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+<%= link_to 'New Comentario', new_comentario_path %>
+</p>
